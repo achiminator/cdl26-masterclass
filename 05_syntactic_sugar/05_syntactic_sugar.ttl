@@ -1,0 +1,14 @@
+@prefix ex: <http://example.com/FriendGraph#> .
+
+ex:Alex ex:livesIn ex:Alex_Family_Home .
+ex:Alex ex:hasEmail "alex.mustermann@muster.de" .
+ex:Alex_Family_Home ex:isa ex:House .
+ex:Alex_Family_Home ex:address w"Downing_Street_22, London" .
+ex:Alex_Family_Home ex:isIn ex:UK .
+ex:bakedBeansAndSpam ex:isa ex:Recipe .
+ex:Alex ex:age 22 .
+ex:Alex ex:likes ex:joshuaSlocum .
+ex:Alex ex:likes ex:bakedBeansAndSpam .
+ex:joshuaSlocum ex:writes ex:AdventureBook . 
+ex:Alex ex:favoriteBooks ex:AdventureBook .
+ex:AdventureBook ex:specialTypeOf ex:Book .

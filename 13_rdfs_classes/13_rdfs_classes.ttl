@@ -1,0 +1,24 @@
+@prefix ex: <http://example.com/FriendGraph#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Alex ex:age 22 ;
+    ex:note "Alex is a great guy"@en ;
+    ex:note "Alex ist ein toller Typ"@de ;
+    ex:note "Alex es un gran tipo"@es ;
+    ex:likes ex:joshuaSlocum , ex:bakedBeansAndSpam ;
+    ex:favoriteBooks ex:AdventureBook ;
+    ex:contact [
+        ex:address "Downing_Street_22, London" ;
+        ex:isIn ex:UK ;
+        a ex:House ;
+        ex:hasEmail "alex.mustermann@muster.de" ] .
+
+ex:bakedBeansAndSpam a ex:Recipe ;
+    ex:ingredients (ex:eggs ex:spam) .
+
+ex:joshuaSlocum ex:writes ex:AdventureBook  .
+ex:AdventureBook ex:specialTypeOf ex:Book .
+ex:sailingAroundTheWorld a ex:AdventureBook ;
+    ex:isbn "1728663091" .

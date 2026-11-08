@@ -1,0 +1,5 @@
+?catalog: https://example.org/catalog-2026
+?dataset: https://example.org/dataset-sales-q1
+?catalogTitle: Example Data Catalog
+?datasetTitle: Q1 Sales Data
+

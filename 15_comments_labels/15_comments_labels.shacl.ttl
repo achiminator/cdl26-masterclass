@@ -1,0 +1,19 @@
+@prefix ex: <http://example.com/FriendGraph#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:commentAndLabelShape a sh:NodeShape ;
+    sh:targetNode ex:bakedBeansAndSpam ;
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:uniqueLang true ;
+        sh:message "There must be at least two comments in different languages" ;
+        sh:minCount 2 ;
+        ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:message "There must be at least two labels in different languages" ;
+        sh:uniqueLang true ;
+        sh:minCount 2 ;
+        ] .

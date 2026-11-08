@@ -1,0 +1,11 @@
+@prefix ex: <http://example.com/FriendGraph#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:typeShape a sh:NodeShape ;
+    sh:targetNode ex:bakedBeansAndSpam ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:minCount 1 ;
+        sh:message "ex:bakedBeansAndSpam should have a type" ;
+    ] .

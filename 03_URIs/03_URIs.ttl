@@ -1,0 +1,12 @@
+<Alex> <livesIn> <Alex_Family_Home> .
+<Alex> <hasEmail> "alex.mustermann@muster.de" .
+<Alex_Family_Home> <isa> <House> .
+<Alex_Family_Home> <address> "Downing_Street_22, London" .
+<Alex_Family_Home> <isIn> <UK> .
+<bakedBeansAndSpam> <isa> <Recipe> .
+<Alex> <age> 22 .
+<Alex> <likes> <JoshuaSlocum> .
+<Alex> <likes> <bakedBeansAndSpam> .
+<JoshuaSlocum> <writes> <AdventureBook> . 
+<Alex> <favoriteBooks> <AdventureBook> .
+<AdventureBook> <specialTypeOf> <Book> .

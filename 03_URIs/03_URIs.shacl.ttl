@@ -1,0 +1,54 @@
+@prefix ex: <http://example.com/FriendGraph#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+ex:BookShape a sh:NodeShape;
+  sh:property [
+      sh:minCount 1;
+      sh:node ex:Book;
+      sh:path ex:specialTypeOf
+    ];
+  sh:targetNode ex:AdventureBook.
+
+ex:HouseShape a sh:NodeShape;
+  sh:property [
+      sh:message "Alex_Family_Home must be a House";
+      sh:node ex:House;
+      sh:path ex:isa
+    ], [
+      sh:datatype xsd:string;
+      sh:message "Alex_Family_Home must have an address";
+      sh:minCount 1;
+      sh:path ex:address
+    ], [
+      sh:message "Alex_Family_Home must be in UK";
+      sh:node ex:UK;
+      sh:path ex:isIn
+    ];
+  sh:targetNode ex:Alex_Family_Home.
+
+ex:PersonShape a sh:NodeShape;
+  sh:property [
+      sh:message "Alex must live in Alex_Family_Home";
+      sh:node ex:Alex_Family_Home;
+      sh:path ex:address
+    ], [
+      sh:datatype xsd:string;
+      sh:message "Alex must have an email";
+      sh:minCount 1;
+      sh:path ex:hasEmail
+    ], [
+      sh:datatype xsd:integer;
+      sh:message "Alex must have an age";
+      sh:minCount 1;
+      sh:path ex:age
+    ], [
+      sh:message "Alex must like JoshuaSlocum or bakedBeansAndSpam";
+      sh:minCount 2;
+      sh:path ex:likes
+    ], [
+      sh:message "Alex must have AdventureBook as favorite books";
+      sh:node ex:AdventureBook;
+      sh:path ex:favoriteBooks
+    ];
+  sh:targetNode ex:Alex.

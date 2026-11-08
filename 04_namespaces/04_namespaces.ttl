@@ -1,0 +1,12 @@
+<http://example.com/FriendGraph#Alex> <http://example.com/FriendGraph#livesIn> <http://example.com/FriendGraph#Alex_Family_Home> .
+<http://example.com/FriendGraph#Alex> <http://example.com/FriendGraph#hasEmail> "alex.mustermann@muster.de" .
+<http://example.com/FriendGraph#Alex_Family_Home> <http://example.com/FriendGraph#isa> <http://example.com/FriendGraph#House> .
+<http://example.com/FriendGraph#Alex_Family_Home> <http://example.com/FriendGraph#address> "Downing_Street_22, London" .
+<http://example.com/FriendGraph#Alex_Family_Home> <http://example.com/FriendGraph#isIn> <http://example.com/FriendGraph#UK> .
+<http://example.com/FriendGraph#bakedBeansAndSpam> <http://example.com/FriendGraph#isa> <http://example.com/FriendGraph#Recipe> .
+<http://example.com/FriendGraph#Alex> <http://example.com/FriendGraph#age> 22 .
+<http://example.com/FriendGraph#Alex> <http://example.com/FriendGraph#likes> <http://example.com/FriendGraph#joshuaSlocum> .
+<http://example.com/FriendGraph#Alex> <http://example.com/FriendGraph#likes> <http://example.com/FriendGraph#bakedBeansAndSpam> .
+<http://example.com/FriendGraph#joshuaSlocum> <http://example.com/FriendGraph#writes> <http://example.com/FriendGraph#AdventureBooks> . 
+<http://example.com/FriendGraph#Alex> <http://example.com/FriendGraph#favoriteBooks> <http://example.com/FriendGraph#AdventureBooks> .
+<http://example.com/FriendGraph#AdventureBook> <http://example.com/FriendGraph#specialTypeOf> <http://example.com/FriendGraph#Book> .

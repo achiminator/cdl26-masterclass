@@ -1,0 +1,37 @@
+@prefix ex: <http://example.com/FriendGraph#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Alex ex:age 22 ;
+    rdfs:comment "Alex is a great guy"@en ,"Alex ist ein toller Typ"@de, "Alex es un gran tipo"@es ;
+    ex:likes ex:joshuaSlocum , ex:bakedBeansAndSpam ;
+    ex:favoriteBooks ex:AdventureBook ;
+    ex:contact [
+        ex:address "Downing_Street_22, London" ;
+        ex:isIn ex:UK ;
+        a ex:House ;
+        ex:hasEmail "alex.mustermann@muster.de" ] .
+
+ex:bakedBeansAndSpam a ex:Recipe ;
+    rdfs:label "Baked Beans and Spam"@en , "Gebackene Bohnen und Spam"@de , "Habichuelas y Spam"@es ;
+    rdfs:comment "A delicious recipe for a hearty meal."@en , "Ein köstliches Rezept für eine herzhafte Mahlzeit."@de , "Una deliciosa receta para una comida abundante."@es ;
+    ex:ingredients (ex:eggs ex:spam) .
+
+ex:joshuaSlocum ex:writes ex:AdventureBook  ;
+    ex:authorOf ex:sailingAroundTheWorld .
+
+
+ex:writes rdfs:domain ex:Author ;
+    rdfs:range ex:Publication .
+ex:authorOf rdfs:domain ex:Author ;
+    rdfs:range ex:Publication .
+ex:AdventureBook rdfs:subClassOf ex:Book .
+ex:Book rdfs:subClassOf ex:Publication .
+
+ex:sailingAroundTheWorld a ex:AdventureBook ;
+    ex:isbn "1728663091" .
+
+ex:isbn rdfs:subPropertyOf ex:identifier ;
+    rdfs:label "ISBN-Nummer"@de , "ISBN-Number"@en ;
+    rdfs:comment "The International Standard Book Number (ISBN) is a unique numeric commercial book identifier."@en , "Die Internationale Standardbuchnummer (ISBN) ist eine eindeutige numerische kommerzielle Buchkennung."@de .

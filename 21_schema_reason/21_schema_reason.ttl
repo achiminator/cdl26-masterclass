@@ -1,0 +1,12 @@
+@prefix ex: <http://example.org/> .
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:23jksh a schema:Person;
+  schema:givenName "John" ;
+  schema:lastName "Doe" .
+
+ex:jas890j a schema:Person;
+  schema:givenName "Jane" ;
+  schema:lastName "Doe" ;
+  schema:parent ex:23jksh.

@@ -1,0 +1,19 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Sample query for the EU Open Data Portal (data.europa.eu)
+# Endpoint example: https://data.europa.eu/sparql
+
+SELECT DISTINCT *
+WHERE {
+  
+  ?catalog a dcat:Catalog ;
+           dcat:dataset ?dataset ;
+           dct:title ?catalogTitle .
+           FILTER(lang(?catalogTitle) = "en")
+           ?dataset dct:title ?datasetTitle .
+           FILTER(lang(?datasetTitle) = "en")
+           
+}
+LIMIT 10

@@ -1,0 +1,26 @@
+@prefix ex: <http://example.com/FriendGraph#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:domainRangeShape
+    a sh:NodeShape ;
+    sh:targetNode ex:writes, ex:authorOf;
+    sh:property [
+        sh:path rdfs:domain;
+        sh:message "The domain writes and authorOf must be defined" ;
+        sh:minCount 1;
+    ] ;
+    sh:property [
+        sh:message "The range writes and authorOf must be defined" ;
+        sh:path rdfs:range;
+        sh:minCount 1;
+    ] .
+ex:isbnShape a sh:NodeShape ;
+
+sh:targetNode ex:isbn;
+sh:property [
+    sh:path rdfs:subPropertyOf;
+    sh:message "The isbn property must be a subproperty of something" ;
+    sh:minCount 1;
+] .

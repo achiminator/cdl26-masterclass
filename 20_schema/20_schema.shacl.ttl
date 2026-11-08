@@ -1,0 +1,26 @@
+@prefix ex: <http://example.org/> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:PersonNodesShape a sh:NodeShape;
+  sh:class schema:Person;
+  sh:property [
+      sh:datatype xsd:string;
+      sh:minCount 1;
+      sh:path [
+          sh:alternativePath (schema:givenName schema:lastName schema:name)
+        ]
+    ], [
+      sh:maxCount 0;
+      sh:message "Could also be schema:givenName and schema:lastName";
+      sh:path schema:name;
+      sh:severity sh:Info
+    ], [
+      sh:class schema:Person;
+      sh:nodeKind sh:IRI;
+      sh:path schema:parent
+    ];
+  sh:targetNode
+    ex:23jksh,
+    ex:jas890j.

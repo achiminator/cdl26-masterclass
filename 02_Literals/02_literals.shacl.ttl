@@ -1,0 +1,25 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:LiteralShape
+    a sh:NodeShape ;
+    sh:targetNode <Alex>;
+    sh:targetNode <Alex_Family_Home>;
+    sh:property [
+        sh:message "The email address of Alex must be a string literal, enclosed in double quotes." ;
+        sh:path <hasEmail> ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:message "The age of Alex must be a number literal, without quotes" ;
+        sh:path <age> ;
+        sh:datatype xsd:integer ;
+    ] ;
+    sh:property [
+        sh:message "The address of Alex must be a string literal, enclosed in double quotes." ;
+        sh:path <address> ;
+        sh:datatype xsd:string ;
+    ] .
